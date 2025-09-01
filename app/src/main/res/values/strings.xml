@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Susidi</string>
+    <string name="default_of_phone_number">+380 __-___-__-__</string>
+    <string name="password">Пароль</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="sign_up">Создать</string>
+    <string name="don_t_have_an_account">Нет аккаунта?</string>
+    <string name="logo">Логотип приложения Соседи</string>
+    <string name="sign_in">Войти</string>
+</resources>
