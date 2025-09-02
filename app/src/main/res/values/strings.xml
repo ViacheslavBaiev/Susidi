@@ -7,4 +7,8 @@
     <string name="don_t_have_an_account">Нет аккаунта?</string>
     <string name="logo">Логотип приложения Соседи</string>
     <string name="sign_in">Войти</string>
+    <string name="main">Главная</string>
+    <string name="map">Карта</string>
+    <string name="chats">Чаты</string>
+    <string name="profile">Профиль</string>
 </resources>
