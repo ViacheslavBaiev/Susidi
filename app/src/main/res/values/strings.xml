@@ -8,7 +8,6 @@
     <string name="logo">Логотип приложения Соседи</string>
     <string name="sign_in">Войти</string>
     <string name="main">Главная</string>
-    <string name="map">Карта</string>
-    <string name="chats">Чаты</string>
-    <string name="profile">Профиль</string>
+    <string name="market">Объявления</string>
+    <string name="services">Услуги</string>
 </resources>

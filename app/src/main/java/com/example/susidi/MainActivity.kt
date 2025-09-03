@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var etPhoneNumber: EditText
     private lateinit var btnSignIn: MaterialButton
+
     private var phoneNumber = ""
     private lateinit var password: String
 
@@ -115,8 +116,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnSignIn.setOnClickListener { view ->
-
-
+            startActivity(DashboardActivity.newIntent(this))
         }
 
     }

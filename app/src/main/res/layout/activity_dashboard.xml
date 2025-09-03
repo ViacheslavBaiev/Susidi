@@ -9,6 +9,7 @@
     tools:context=".DashboardActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_dashboard_top"
@@ -34,24 +35,52 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_max="50dp"
             app:layout_constraintWidth_percent="1"
-            app:srcCompat="@drawable/logo_mini_50_50" />
+            app:srcCompat="@drawable/ic_profile_male" />
 
         <SearchView
             android:id="@+id/search"
             android:layout_width="0dp"
             android:layout_height="50dp"
+            android:textColor="@color/black"
             android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/custom_input"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/chats"
             app:layout_constraintStart_toEndOf="@id/logo_mini"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.65"
-            tools:layout_editor_absoluteX="120dp"
-            tools:layout_editor_absoluteY="16dp" />
+            app:layout_constraintWidth_percent="0.65" />
+
+        <ImageView
+            android:id="@+id/chats"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/logo"
+            android:scaleType="fitCenter"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_max="50dp"
+            app:layout_constraintHeight_percent="1"
+            app:layout_constraintStart_toEndOf="@id/search"
+            app:layout_constraintWidth_max="50dp"
+            app:layout_constraintWidth_percent="1"
+            app:srcCompat="@drawable/ic_chats" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/clBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clTop">
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_dashboard_bottom"
@@ -66,133 +95,102 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/clMap"
+            app:layout_constraintEnd_toStartOf="@id/clMarket"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
                 android:id="@+id/home"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:contentDescription="@string/logo"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toTopOf="@id/tvMain"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="@+id/tvMain"
-                app:layout_constraintHeight_max="50dp"
+                app:layout_constraintHeight_max="40dp"
                 app:layout_constraintHeight_percent="1"
                 app:layout_constraintStart_toStartOf="@+id/tvMain"
-                app:layout_constraintWidth_max="50dp"
+                app:layout_constraintWidth_max="40dp"
                 app:layout_constraintWidth_percent="1"
-                app:srcCompat="@drawable/ic_home" />
+                app:srcCompat="@drawable/ic_news" />
 
             <TextView
                 android:id="@+id/tvMain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/main"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clMap"
+            android:id="@+id/clMarket"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/clChats"
+            app:layout_constraintEnd_toStartOf="@id/clServices"
             app:layout_constraintStart_toEndOf="@id/clHome">
 
             <ImageView
-                android:id="@+id/map"
+                android:id="@+id/market"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:contentDescription="@string/logo"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toTopOf="@id/tvMap"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_max="50dp"
+                app:layout_constraintHeight_max="40dp"
                 app:layout_constraintHeight_percent="1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintWidth_max="50dp"
+                app:layout_constraintWidth_max="40dp"
                 app:layout_constraintWidth_percent="1"
-                app:srcCompat="@drawable/ic_map" />
+                app:srcCompat="@drawable/ic_megaphone" />
 
             <TextView
                 android:id="@+id/tvMap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/map"
-                app:layout_constraintBottom_toBottomOf="@+id/map"
+                android:text="@string/market"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/market"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clChats"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/clProfile"
-            app:layout_constraintStart_toEndOf="@id/clMap">
-
-            <ImageView
-                android:id="@+id/chats"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:contentDescription="@string/logo"
-                android:scaleType="fitCenter"
-                app:layout_constraintBottom_toTopOf="@id/tvChats"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_max="50dp"
-                app:layout_constraintHeight_percent="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintWidth_max="50dp"
-                app:layout_constraintWidth_percent="1"
-                app:srcCompat="@drawable/ic_chats" />
-
-            <TextView
-                android:id="@+id/tvChats"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/chats"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/chats" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clProfile"
+            android:id="@+id/clServices"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/clChats">
+            app:layout_constraintStart_toEndOf="@id/clMarket">
 
             <ImageView
                 android:id="@+id/profile"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:contentDescription="@string/logo"
                 android:scaleType="fitCenter"
                 app:layout_constraintBottom_toTopOf="@id/tvProfile"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_max="50dp"
+                app:layout_constraintHeight_max="40dp"
                 app:layout_constraintHeight_percent="1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintWidth_max="50dp"
+                app:layout_constraintWidth_max="40dp"
                 app:layout_constraintWidth_percent="1"
-                app:srcCompat="@drawable/ic_profile_male" />
+                app:srcCompat="@drawable/ic_services" />
 
             <TextView
                 android:id="@+id/tvProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/profile"
+                android:text="@string/services"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/profile" />
